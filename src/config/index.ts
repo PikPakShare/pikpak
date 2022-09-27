@@ -1,6 +1,5 @@
 export const proxy = [
   'https://api.pikpakshare.workers.dev',
-  'https://api-pikpak.go-back.cf',
 ]
 
 export const serverNumbers = [
