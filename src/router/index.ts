@@ -49,11 +49,6 @@ const routes: RouteRecordRaw[] = [
         name: 'invited',
         component: () => import('../views/invited.vue')
       },
-      // {
-      //   path: 'share',
-      //   name: 'share',
-      //   component: () => import('../views/share.vue')
-      // }
     ]
   },
   {
@@ -80,11 +75,6 @@ const routes: RouteRecordRaw[] = [
     path: '/register',
     name: 'register',
     component: () => import('../views/register.vue'),
-  },
-  {
-    path: '/testtest',
-    name: 'testtest',
-    component: () => import('../views/testtest.vue'),
   },
 ]
 
