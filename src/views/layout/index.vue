@@ -12,7 +12,7 @@
         bordered
       >
         <a href="https://mypikpak.com/" target="_blank" class="logo-box">
-          <img src="../../assets/PikPak.png" class="logo-box__icon" alt="">
+          <img src="../../assets/PikPakS.png" class="logo-box__icon" alt="">
           <div class="logo-box__text">PikPak</div>
         </a>
         <n-menu :options="menuOptions" :value="String(route.name)" @update:value="goRoute"></n-menu>
@@ -269,7 +269,7 @@
       box-sizing: border-box;
     }
     .sider-bottom.vip {
-      background-color: #ff7440;
+      background-color: #fbe8e1;
     }
     .sider-bottom::before {
       display: block;
