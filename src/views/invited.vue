@@ -200,7 +200,7 @@ onMounted(() => {
 .list-page .loading {
   margin-top: 20px;
   text-align: center;
-  color: rgba(37, 38, 43, 0.36);
+  color: rgba(34, 34, 34, 0.5);
 }
 .list-page .loading .n-spin-body {
   vertical-align: middle;
