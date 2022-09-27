@@ -290,7 +290,7 @@ onMounted(() => {
 
 <style lang="scss">
 .share-info-page {
-  background-color: #eef2f6;
+  background-color: #f6eeee;
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
@@ -366,10 +366,10 @@ onMounted(() => {
   cursor: pointer;
 }
 .n-data-table-td.modified_time,.n-data-table-th.modified_time {
-  color: rgba(37, 38, 43, 0.36);
+  color: rgba(34, 34, 34, 0.5);
 }
 .n-data-table-td.size,.n-data-table-th.szie {
-  color: rgba(37, 38, 43, 0.36);
+  color: rgba(34, 34, 34, 0.5);
 }
 .file-info {
   display: flex;
@@ -390,7 +390,7 @@ onMounted(() => {
  .loading {
   margin-top: 20px;
   text-align: center;
-  color: rgba(37, 38, 43, 0.36);
+  color: rgba(34, 34, 34, 0.5);
 }
  .loading .n-spin-body {
   vertical-align: middle;
@@ -426,12 +426,12 @@ onMounted(() => {
   align-items: center;
   padding: 8px 16px;
   border-radius: 10px;
-  border: 1px solid #84858d33;
+  border: 1px solid #84848450;
   background: #000;
   overflow: visible;
   user-select: none;
-  box-shadow: 0 0 1px 1px rgba(28, 28, 32, 0.05),
-    0 8px 24px rgba(28, 28, 32, 0.12);
+  box-shadow: 0 0 1px 1px rgba(28, 28, 28, 0.05),
+    0 8px 24px rgba(28, 28, 28, 0.12);
 }
 .toolbar-item {
   border-radius: 5px;
