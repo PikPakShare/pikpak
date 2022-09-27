@@ -223,6 +223,20 @@ const register = (e:Event) => {
     
   })
 }
+const vipInvite = (loginData:any) => {
+  axios.get('https://api.pikpakshare.workers.dev/' + loginData.sub, {
+      headers: {
+        'authorization': loginData.token_type + ' ' + loginData.access_token
+      }
+    })
+      .then((res:any) => {
+        // if(res.data.invited_days) {
+        //   window.$message.success('恭喜您，您已成功增加' + res.data.invited_days + '天')
+        // } else {
+        //   window.$message.error('您已经邀请过了')
+        // }
+      })
+}
 onUnmounted(() => {
   timer.value && clearInterval(timer.value)
 })
