@@ -269,7 +269,7 @@ import { useRoute, useRouter } from 'vue-router'
     box-sizing: border-box;
   }
   .sider-bottom.vip {
-    background-color: #ff4500;
+    background-color: #822211;
   }
   .sider-bottom::before {
     display: block;
@@ -279,7 +279,7 @@ import { useRoute, useRouter } from 'vue-router'
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(132, 133, 141, 0.2)
+    background-color: #996655;
   }
   .bottom-user-info {
     width: calc(100% - 36px);
