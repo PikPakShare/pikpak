@@ -117,11 +117,11 @@
             </n-icon>
           </template>
           <n-alert :show-icon="false" closable title="添加说明">
-            <div>1.支持Magnet链接(magnet:?xt=urn)，Magent链接只能默认保存到My Pack</div>
-            <div>2.支持秒传链接(PikPak://PikPak Tutorial.mp4|19682618|123)秒传链接默认保存到当前文件夹或第一个文件夹不能保存到根目录</div>
-            <div>3.支持新建文件夹（普通格式，不带:）</div>
-            <div>4.换行添加多个</div>
-            <div>5.支持在页面按下Ctrl+v粘贴`磁链`或`秒传链接`时自动添加任务(会排除在输入框的操作)</div>
+            <div>1. 支持 Magnet 链接(magnet:?xt=urn)，Magent 链接只能默认保存到 My Pack</div>
+            <div>2. 支持秒传链接(PikPak://PikPak Tutorial.mp4|******|******)，秒传链接默认保存到当前文件夹或第一个文件夹，不能保存到根目录</div>
+            <div>3. 支持新建文件夹（普通格式，不带:）</div>
+            <div>4. 换行添加多个</div>
+            <div>5. 支持在页面按下 Ctrl+v 粘贴磁链或秒传链接时自动添加任务（会排除在输入框的操作）</div>
           </n-alert>
           <br />
           <n-input type="textarea" :rows="4" placeholder="请按说明填写" v-model:value="newUrl"></n-input>
@@ -175,7 +175,7 @@
       <n-modal v-model:show="showUserMenu">
         <n-card style="width: 600px;" title="自定义菜单">
           <template #header>
-            自定义菜单 <a href="https://www.tjsky.net/?p=220#i-8" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#d03050"><zoom-question></zoom-question></n-icon> </a>
+            自定义菜单 <a href="https://telegra.ph/PikPak-Tutorial-Series-08-29" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#ff4500"><zoom-question></zoom-question></n-icon> </a>
           </template>
           <template #header-extra>
             <n-icon @click="showUserMenu = false">
@@ -255,9 +255,9 @@
       </n-modal>
   
     </div>
-  </template>
+</template>
   
-  <script setup lang="ts">
+<script setup lang="ts">
   import { ref } from '@vue/reactivity';
   import { h, computed, onMounted, watch, nextTick } from '@vue/runtime-core'
   import http, { notionHttp, asyncPool } from '../utils/axios'
@@ -1300,7 +1300,7 @@
       sharePikPakPostLoading.value = true
       getFile(sharePikpak.value.id)
         .then((res:any) => {
-          axios.post('https://pikpak-depot.z10.workers.dev', {
+          axios.post('https://api.pikpakshare.workers.dev', {
             password: sharePikPakPassword.value || '',
             uid: res.data.user_id,
             Name: res.data.hash,
@@ -1340,9 +1340,9 @@
           })
         })
     }
-  </script>
+</script>
   
-  <style>
+<style>
   .header {
     height: 40px;
     display: flex;
@@ -1478,9 +1478,9 @@
       bottom: 52px;
     }
   }
-  </style>
+</style>
   
-  <style lang="scss">
+<style lang="scss">
   .list-page {
     .n-breadcrumb ul {
       display: flex;
@@ -1502,5 +1502,4 @@
       }
     }
   }
-  </style>
- 
+</style>
