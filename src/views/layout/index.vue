@@ -12,7 +12,7 @@
         bordered
       >
         <a href="https://mypikpak.com/" target="_blank" class="logo-box">
-          <img src="../../assets/PikPakS.png" class="logo-box__icon" alt="">
+          <img src="../../assets/PikPakB.png" class="logo-box__icon" alt="">
           <div class="logo-box__text">PikPak</div>
         </a>
         <n-menu :options="menuOptions" :value="String(route.name)" @update:value="goRoute"></n-menu>
@@ -245,7 +245,7 @@
       font-family: PingFangSC-Semibold;
       font-size: 20PX;
       letter-spacing: -1.25PX;
-      color: #000;
+      color: #fff;
     }
     .content-bottom {
       width: 192px;
@@ -269,7 +269,7 @@
       box-sizing: border-box;
     }
     .sider-bottom.vip {
-      background-color: #fbe8e1;
+      background-color: #ff4500;
     }
     .sider-bottom::before {
       display: block;
