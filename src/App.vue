@@ -1,18 +1,18 @@
 <script setup lang="ts">
   import { ref } from '@vue/reactivity';
-import { onMounted } from '@vue/runtime-core';
+  import { onMounted } from '@vue/runtime-core';
   import { GlobalThemeOverrides, NConfigProvider, NMessageProvider, zhCN, dateZhCN, NDialogProvider, NNotificationProvider } from 'naive-ui'
   import MessageContent from './components/MessageContent.vue';
   import { version, proxy } from './config'
   const themeOverrides = ref<GlobalThemeOverrides>({
     common: {
-      primaryColor: '#306eff',
-      hoverColor: '#306eff',
-      primaryColorHover: '#306eff',
+      primaryColor: '#ff4500',
+      hoverColor: '#ff4500',
+      primaryColorHover: '#ff4500',
       heightMedium: '42px',
     },
     Layout: {
-      siderColor: '#f5f5f6'
+      siderColor: '#fafafa'
     },
     Breadcrumb: {
       fontSize: '16px'
@@ -24,8 +24,8 @@ import { onMounted } from '@vue/runtime-core';
       optionTextColorActive: '#fff',
     },
     Upload: {
-      itemColorHover: '#F3F3F5FF',
-      itemTextColorSuccess: '#18A058FF',
+      itemColorHover: '#fafafaff',
+      itemTextColorSuccess: '#18a058ff',
     }
   })
   onMounted(() => {
