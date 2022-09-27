@@ -1343,7 +1343,6 @@ import { useListStoreWithOut } from '../store/modules/list'
 </script>
 
 <style>
-
 .header {
   height: 40px;
   display: flex;
@@ -1363,15 +1362,14 @@ import { useListStoreWithOut } from '../store/modules/list'
 .header .action {
   font-size: 24px;
 }
-
 .n-data-table-td {
   cursor: pointer;
 }
 .n-data-table-td.modified_time,.n-data-table-th.modified_time {
-  color: rgba(37, 38, 43, 0.36);
+  color: rgba(34, 34, 34, 0.5);
 }
 .n-data-table-td.size,.n-data-table-th.szie {
-  color: rgba(37, 38, 43, 0.36);
+  color: rgba(34, 34, 34, 0.5);
 }
 .file-info {
   display: flex;
@@ -1403,7 +1401,7 @@ import { useListStoreWithOut } from '../store/modules/list'
 .list-page .loading {
   margin-top: 20px;
   text-align: center;
-  color: rgba(37, 38, 43, 0.36);
+  color: rgba(34, 34, 34, 0.5);
 }
 .list-page .loading .n-spin-body {
   vertical-align: middle;
@@ -1439,12 +1437,12 @@ import { useListStoreWithOut } from '../store/modules/list'
   align-items: center;
   padding: 8px 16px;
   border-radius: 10px;
-  border: 1px solid #84858d33;
+  border: 1px solid #84848450;
   background: #000;
   overflow: visible;
   user-select: none;
-  box-shadow: 0 0 1px 1px rgba(28, 28, 32, 0.05),
-    0 8px 24px rgba(28, 28, 32, 0.12);
+  box-shadow: 0 0 1px 1px rgba(28, 28, 28, 0.05),
+    0 8px 24px rgba(28, 28, 28, 0.12);
 }
 .toolbar-item {
   border-radius: 5px;
@@ -1498,7 +1496,7 @@ import { useListStoreWithOut } from '../store/modules/list'
       }
       &:nth-child(1),
       &:nth-last-child(1) {
-        //background: rgb(67, 211, 27);
+        //background: rgb(255, 69, 0);
         flex-shrink: 0;
       }
     }
