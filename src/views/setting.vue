@@ -1,37 +1,37 @@
 <template>
   <div class="list-page">
-    <n-collapse :default-expanded-names="['-1', '0', '2', '3', 'download']">
-      <n-collapse-item name="-1" >
+    <n-collapse :default-expanded-names="['6']">
+      <n-collapse-item name="0" >
         <template #header>
-          绑定telegram   <a @click.stop="" href="https://www.tjsky.net/?p=220#Telegram" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#d03050"><zoom-question></zoom-question></n-icon> </a>
+          绑定 Telegram丨<a @click.stop="" href="https://telegra.ph/PikPak-Tutorial-Series-08-29" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#ff4500"><AlertTriangle></AlertTriangle></n-icon> </a>
         </template>
-        <n-input v-model:value="telegramUrl" placeholder="复制telegram绑定链接到这"></n-input>
+        <n-input v-model:value="telegramUrl" placeholder="填入 Telegram 绑定链接"></n-input>
         <p></p>
-        <n-button :disabled="!telegramUrl" type="primary" @click="goTelegram">Telegram绑定</n-button>&nbsp; 
-        <a href="https://t.me/PikPak_Bot" target="_blank">Telegram机器人地址</a>
+        <n-button :disabled="!telegramUrl" type="primary" @click="goTelegram">绑定</n-button>&nbsp; 
+        <a href="https://t.me/PikPak_Bot" target="_blank">Telegram 机器人地址</a>
       </n-collapse-item>
 
       <!-- start Aria2设置 -->
-      <n-collapse-item name="0" title="Aria2设置">
-        <template #header>Aria2设置   <a @click.stop="" href="https://www.tjsky.net/?p=220#arai2" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#d03050"><zoom-question></zoom-question></n-icon> </a></template>
+      <n-collapse-item name="1" title="Aria2 设置丨">
+        <template #header>Aria2 设置丨<a @click.stop="" href="hhttps://telegra.ph/PikPak-Tutorial-Series-08-29" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#ff4500"><AlertTriangle></AlertTriangle></n-icon> </a></template>
         <n-form label-width="120px" label-align="left" label-placement="left" autocomplete="off">
-          <n-form-item label="Aria2链接：">
-            <n-input v-model:value="aria2Data.host" placeholder="例如http://localhost:6800/jsonrpc" clearable></n-input>
+          <n-form-item label="Aria2 RPC：">
+            <n-input v-model:value="aria2Data.host" placeholder="例如 http://localhost:6800/jsonrpc" clearable></n-input>
           </n-form-item>
           <n-form-item label="Aria2 Token：">
             <n-input v-model:value="aria2Data.token" type="password" show-password-on="mousedown" clearable></n-input>
           </n-form-item>
-          <n-form-item label="限制连接数：" feedback="【实测并没有降低429的概率😅】一个下载链接只使用一个网络连接(线程)，使用反代时，建议开启，避免429。如不开启，请查看Aria2默认的`单任务连接数`和`单服务器最大连接数`">
+          <n-form-item label="限制连接数：" feedback="限制连接数 - 一个下载链接只使用一个网络连接(线程)，使用反代时，建议开启，避免下载 Error 429。如不开启，请查看 Aria2 默认的单任务连接数和单服务器最大连接数「实测并没有降低 429 的概率😅」">
             <n-switch v-model:value="aria2Data.restrictConnections">
               <template #checked>开启 - 避免请求频繁</template>
-              <template #unchecked>不开启 - Aria2默认控制</template>
+              <template #unchecked>不开启 - Aria2 默认控制</template>
             </n-switch>
           </n-form-item>
           <!-- TODO nativeui v2.24.0 才有feedback这个slot -->
-          <n-form-item label="反代域名：" feedback="对全部Aria2下载生效。可以参考教程：https://www.tjsky.net/?p=433">
-            <n-input v-model:value="aria2Data.reverseHost" placeholder="例如http://pcdn.xx.com" clearable></n-input>
+          <n-form-item label="反代域名：" feedback="反代域名 - 对全部 Aria2 下载生效">
+            <n-input v-model:value="aria2Data.reverseHost" placeholder="例如 http://pcdn.xx.com" clearable></n-input>
           </n-form-item>
-          <n-form-item label="服务器序号：" feedback="仅对「推送到Aria2」生效">
+          <n-form-item label="服务器序号：" feedback="服务器序号 - 仅对「推送到Aria2」生效">
             <n-auto-complete
               v-model:value="aria2Data.serverNumber"
               :options="aria2Data.serverNumbers"
@@ -42,29 +42,25 @@
           <n-form-item label="服务器列表：">
             <n-dynamic-tags v-model:value="aria2Data.serverNumbers" />
           </n-form-item>
-          <n-form-item label="叠加数量：" feedback="对应功能「Aria2-Buff」。使用多个链接下载一个文件，适合需要更快下载某个文件的场景">
+          <n-form-item label="叠加数量：" feedback="叠加数量 - 对应功能「Aria2-Buff」，使用多个链接下载一个文件，适合需要更快下载某个文件的场景">
             <n-input-number v-model:value="aria2Data.batchUrlNum" placeholder="需要推送多少个链接下载一个文件" :min="0" :max="64"></n-input-number>
           </n-form-item>
-          <n-form-item label="叠加策略：" feedback="「自然选择」：取到什么就用什么；「序列循坏」：从「服务器序号列表」中从头到尾选取">
+          <n-form-item label="叠加策略：" feedback="叠加策略 - 「自然选择」：取到什么就用什么；「序列循坏」：从「服务器序号列表」中从头到尾选取">
             <n-radio-group v-model:value="aria2Data.batchStrategy">
               <n-radio-button value="natural" label="自然选择">自然选择</n-radio-button>
               <n-radio-button value="series" label="序列循坏">序列循坏</n-radio-button>
             </n-radio-group>
           </n-form-item>
-          <n-form-item label="获取链接并发：" feedback="提取多个下载链接时的并发数。建议不要太大，以免触发风控(实际作者也不清楚具体的限制)">
+          <n-form-item label="获取链接并发：" feedback="获取链接并发 - 提取多个下载链接时的并发数，建议不要太大，以免触发风控">
             <n-input-number v-model:value="aria2Data.batchUrlConcurrence" placeholder="提取多个下载链接时的并发数"></n-input-number>
           </n-form-item>
           <n-form-item label="文件夹设置：">
             <n-switch v-model:value="aria2Data.dir" >
-              <template #checked>选择文件夹时保存文件夹结构</template>
-              <template #unchecked>选择文件夹时仅保存文件</template>
+              <template #checked>推送下载文件夹时保存文件夹结构</template>
+              <template #unchecked>推送下载文件夹时仅保存文件</template>
             </n-switch>
           </n-form-item>
-          <n-alert type="warning" title="由于浏览器限制，请在浏览器的「网站设置」中，将「不安全内容」设置为「允许」" v-if="browserTipsVisible">
-            <div>
-              <img src="../assets/aria2-tip-1.png" alt=""/>&nbsp; 
-              <img src="../assets/aria2-tip-2.png" alt=""/>
-            </div>
+          <n-alert type="warning" title="由于浏览器限制，请在浏览器地址栏最前面的「🔒」按钮「网站设置」选项中，将「不安全内容」设置为「允许」" v-if="browserTipsVisible">
           </n-alert>
           <n-form-item>
             <n-button type="primary" @click="testAria2">测试并保存</n-button>
@@ -74,10 +70,10 @@
       <!-- end Aria2设置 -->
 
       <!-- start 网页下载设置 -->
-      <n-collapse-item name="download" title="网页下载设置">
-        <template #header>网页下载设置   <n-icon style="vertical-align: middle;" size="20" color="#d03050"><download></download></n-icon></template>
+      <n-collapse-item name="2" title="网页下载设置丨">
+        <template #header>网页下载设置丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><Download></Download></n-icon></template>
         <n-form label-width="120px" label-align="left" label-placement="left">
-          <n-form-item label="服务器序号：" feedback="替换下载链接域名中的服务器序号。序号请参考上面「Aria2设置」里的「服务器序号列表」">
+          <n-form-item label="服务器序号：" feedback="服务器序号 - 替换下载链接域名中的服务器序号，序号请参考上面「Aria2 设置」里的「服务器序号列表」">
             <n-auto-complete
               v-model:value="downloadConfig.serverNumber"
               :options="serverNumbers"
@@ -85,7 +81,7 @@
               clearable
             ></n-auto-complete>
           </n-form-item>
-          <n-form-item label="反代域名：" feedback="自动在下载链接前加上该反代域名。可以参考教程：https://www.tjsky.net/?p=433">
+          <n-form-item label="反代域名：" feedback="反代域名 - 自动在下载链接前加上该反代域名">
             <n-input v-model:value="downloadConfig.reverseHost" placeholder="反代域名" clearable></n-input>
           </n-form-item>
           <n-form-item>
@@ -96,10 +92,10 @@
       <!-- end 网页下载设置 -->
 
       <!-- start 播放设置 -->
-      <n-collapse-item name="play" title="播放设置">
-        <template #header>播放设置   <n-icon style="vertical-align: middle;" size="20" color="#d03050"><Video></Video></n-icon></template>
+      <n-collapse-item name="3" title="播放设置丨">
+        <template #header>播放设置丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><Video></Video></n-icon></template>
         <n-form label-width="120px" label-align="left" label-placement="left">
-          <n-form-item label="服务器序号：" feedback="替换播放链接域名中的服务器序号。序号请参考上面「Aria2设置」里的「服务器序号列表」">
+          <n-form-item label="服务器序号：" feedback="服务器序号 - 替换播放链接域名中的服务器序号，序号请参考上面「Aria2设置」里的「服务器序号列表」">
             <n-auto-complete
               v-model:value="playConfig.serverNumber"
               :options="serverNumbers"
@@ -107,10 +103,10 @@
               clearable
             ></n-auto-complete>
           </n-form-item>
-          <n-form-item label="反代域名：" feedback="自动在播放链接前加上该反代域名。可以参考教程：https://www.tjsky.net/?p=433">
+          <n-form-item label="反代域名：" feedback="反代域名 - 自动在播放链接前加上该反代域名">
             <n-input v-model:value="playConfig.reverseHost" placeholder="反代域名" clearable></n-input>
           </n-form-item>
-          <n-form-item label="应用到图片查看：" feedback="查看图片时也使用指定序号和反代域名">
+          <n-form-item label="应用到图片查看：" feedback="应用到图片查看 - 查看图片时也使用指定序号和反代域名">
             <n-switch v-model:value="playConfig.applyToImage"></n-switch>
           </n-form-item>
           <n-form-item>
@@ -121,8 +117,8 @@
       <!-- end 播放设置 -->
 
       <!-- start 自动登录设置 -->
-      <n-collapse-item name="1" title="自动登录设置">
-        <template #header>自动登录设置   <a @click.stop="" href="https://www.tjsky.net/?p=220#i-6" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#d03050"><zoom-question></zoom-question></n-icon> </a></template>
+      <n-collapse-item name="4" title="自动登录设置丨">
+        <template #header>自动登录设置丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><Accessible></Accessible></n-icon></template>
         <n-form label-width="100px" label-align="left" label-placement="left">
           <n-form-item label="是否开启">
             <n-switch v-model:value="loginSwitch"></n-switch>
@@ -143,8 +139,8 @@
       <!-- end 自动登录设置 -->
 
       <!-- start 代理设置 -->
-      <n-collapse-item name="3">
-        <template #header>代理设置 <n-icon style="vertical-align: middle;" size="20" color="#d03050"><wifi></wifi></n-icon></template>
+      <n-collapse-item name="5">
+        <template #header>代理设置丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><Planet></Planet></n-icon></template>
         <n-input type="textarea" v-model:value="proxyData" rows="4" placeholder="支持多个随机，一行一个，为空则不代理"></n-input>
         <p></p>
         <n-button type="primary" @click="proxyPost">保存设置</n-button>
@@ -153,18 +149,13 @@
       </n-collapse-item>
       <!-- end 代理设置 -->
 
-      <n-collapse-item title="关于" name="2">
+      <n-collapse-item title="关于丨" name="6">
         <n-space>
           <a href="https://mypikpak.com/" target="_blank" class="n-button">官方网站</a>
           <a href="https://t.me/pikpak_userservice" target="_blank" class="n-button">官方交流群</a>
-          <a href="https://github.com/northsea4/pikpak" target="_blank" class="n-button">开源仓库</a>
-          <a href="https://www.tjsky.net/?p=201" target="_blank" class="n-button">部署教程</a>
+          <a href="https://github.com/xiaokaixuan/pikpak" target="_blank" class="n-button">开源仓库</a>
         </n-space>
         <br />
-      </n-collapse-item>
-
-      <n-collapse-item title="功能列表" name="3">
-        <n-log :lines="logs"></n-log>
       </n-collapse-item>
     </n-collapse>
   </div>
@@ -181,23 +172,11 @@ import {
   NAlert, NLog, NIcon, NAutoComplete, NRadioGroup, NRadioButton,
   NDynamicTags,
 } from 'naive-ui'
-import { ZoomQuestion, Download, Video, Wifi, } from '@vicons/tabler'
+import { AlertTriangle, Download, Video, Accessible, Planet, } from '@vicons/tabler'
 import {
   proxy as proxyDefault,
   serverNumbers
 } from '../config'
-
-const logs = ref([
-  '手机注册登陆',
-  '添加推广下载',
-  '绑定Telegram',
-  '直接分享功能（下线）',
-  '修改传输自动请求方式',
-  '传输只显示保存中',
-  '自定义菜单',
-  '资源库分页，分享秒传支持文件及',
-  '....'
-])
 
 const downloadConfig = ref({
   // 自定义服务器序号
@@ -210,7 +189,6 @@ const saveDownloadConfig = () => {
   window.localStorage.setItem('pikpakDownload', JSON.stringify(downloadConfig.value))
   window.$message.success('保存成功')
 }
-
 
 const playConfig = ref({
   // 自定义服务器序号
@@ -242,7 +220,6 @@ const aria2Data = ref({
   // 反代域名
   reverseHost: '',
 })
-
 
 const browserTipsVisible = computed(() => aria2Data.value.host && isCrossOrigin(aria2Data.value.host))
 
