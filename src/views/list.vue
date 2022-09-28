@@ -1376,8 +1376,7 @@
     align-items: center;
   }
   .file-info img {
-    width: 28px;
-    height: 28px;
+    width: 48px;
     margin-right: 20px;
   }
   .file-info .title {
