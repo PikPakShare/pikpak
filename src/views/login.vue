@@ -113,7 +113,7 @@ const showMessage = () => {
 
 <style >
   .login-page {
-    background-color: #ff7440;
+    background-color: #ffe0d5;
      box-sizing: border-box;
     min-height: 100vh;
     width: 100%;
