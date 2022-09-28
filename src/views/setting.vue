@@ -69,9 +69,9 @@
       </n-collapse-item>
       <!-- end Aria2设置 -->
 
-      <!-- start 网页下载设置 -->
-      <n-collapse-item name="2" title="网页下载设置丨">
-        <template #header>网页下载设置丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><Download></Download></n-icon></template>
+      <!-- start 下载设置 -->
+      <n-collapse-item name="2" title="下载设置丨">
+        <template #header>下载设置丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><Download></Download></n-icon></template>
         <n-form label-width="120px" label-align="left" label-placement="left">
           <n-form-item label="服务器序号：" feedback="服务器序号 - 替换下载链接域名中的服务器序号，序号请参考上面「Aria2 设置」里的「服务器序号列表」">
             <n-auto-complete
@@ -89,7 +89,7 @@
           </n-form-item>
         </n-form>
       </n-collapse-item>
-      <!-- end 网页下载设置 -->
+      <!-- end 下载设置 -->
 
       <!-- start 播放设置 -->
       <n-collapse-item name="3" title="播放设置丨">
