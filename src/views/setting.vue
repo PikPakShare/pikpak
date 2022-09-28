@@ -3,7 +3,7 @@
     <n-collapse :default-expanded-names="['6']">
       <n-collapse-item name="0" >
         <template #header>
-          绑定 Telegram丨<a @click.stop="" href="https://telegra.ph/PikPak-Tutorial-Series-08-29" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#ff4500"><AlertTriangle></AlertTriangle></n-icon> </a>
+          绑定 Telegram丨<a @click.stop="" href="https://telegra.ph/PikPak-Tutorial-Series-08-29" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#ff4500"><BrandTelegram></BrandTelegram></n-icon> </a>
         </template>
         <n-input v-model:value="telegramUrl" placeholder="填入 Telegram 绑定链接"></n-input>
         <p></p>
@@ -13,7 +13,7 @@
 
       <!-- start Aria2设置 -->
       <n-collapse-item name="1" title="Aria2 设置丨">
-        <template #header>Aria2 设置丨<a @click.stop="" href="hhttps://telegra.ph/PikPak-Tutorial-Series-08-29" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#ff4500"><AlertTriangle></AlertTriangle></n-icon> </a></template>
+        <template #header>Aria2 设置丨<a @click.stop="" href="hhttps://telegra.ph/PikPak-Tutorial-Series-08-29" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#ff4500"><Puzzle></Puzzle></n-icon> </a></template>
         <n-form label-width="120px" label-align="left" label-placement="left" autocomplete="off">
           <n-form-item label="Aria2 RPC：">
             <n-input v-model:value="aria2Data.host" placeholder="例如 http://localhost:6800/jsonrpc" clearable></n-input>
@@ -152,10 +152,15 @@
       <n-collapse-item title="关于" name="6">
         <n-space>
           <a href="https://t.me/PikPakGroup" target="_blank" class="n-button">PikPak 分享群</a>
+           • 
           <a href="https://t.me/PikPakShare" target="_blank" class="n-button">PikPak 分享频道</a>
+           • 
           <a href="https://t.me/PikPakChannel" target="_blank" class="n-button">PikPak 通知频道</a>
+           • 
           <a href="https://mypikpak.com/" target="_blank" class="n-button">官方网站</a>
+           • 
           <a href="https://t.me/pikpak_userservice" target="_blank" class="n-button">官方交流群</a>
+           • 
           <a href="https://github.com/northsea4/pikpak" target="_blank" class="n-button">开源仓库</a>
         </n-space>
         <br />
@@ -175,7 +180,7 @@ import {
   NAlert, NLog, NIcon, NAutoComplete, NRadioGroup, NRadioButton,
   NDynamicTags,
 } from 'naive-ui'
-import { AlertTriangle, Download, Video, Accessible, Planet, } from '@vicons/tabler'
+import { Puzzle, Download, Video, Accessible, Planet, BrandTelegram, } from '@vicons/tabler'
 import {
   proxy as proxyDefault,
   serverNumbers
