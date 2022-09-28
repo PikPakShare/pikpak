@@ -144,8 +144,6 @@
         <n-input type="textarea" v-model:value="proxyData" rows="4" placeholder="支持多个随机，一行一个，为空则不代理"></n-input>
         <p></p>
         <n-button type="primary" @click="proxyPost">保存设置</n-button>
-        &nbsp;&nbsp;
-        <n-text @click="proxyReset">恢复默认</n-text>
       </n-collapse-item>
       <!-- end 代理设置 -->
 
