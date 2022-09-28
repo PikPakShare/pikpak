@@ -20,7 +20,7 @@
             <n-button type="primary" class="block" :loading="loading" @click="loginPost">登陆</n-button>
           </n-form-item>
           <n-form-item label="">
-            <a target="_blank" href="https://i.mypikpak.com/v1/file/center/account/v1/password/?type=forget_password&locale=zh-cn" class="forget-password">忘记密码</a>
+            <a target="_blank" href="https://mypikpak.com/drive/account/password" class="forget-password">忘记密码</a>
             <router-link to="/register" class="register">注册</router-link>
           </n-form-item>
         </n-form>
