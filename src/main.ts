@@ -27,10 +27,4 @@ app.directive('resize', {
 })
 app.config.globalProperties.$http = http
 app.use(router)
-app.use(cnzzAnalytics, {
-  router: router,
-  siteIdList: [
-    0000000000,
-  ],
-});
 app.mount('#app')
