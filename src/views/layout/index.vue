@@ -33,8 +33,8 @@
       </div>
       <div class="sider-bottom" v-if="!collapsed" :class="{vip: vipInfo?.status === 'ok'}">
         <div class="bottom-user-info">
-          <img src="../../assets/vip.png" class="user-info-avatar" v-if="vipInfo?.status === 'ok'">
-          <img src="../../assets/novip.png" v-else class="user-info-avatar">
+          <img src="../../assets/vip.jpg" class="user-info-avatar" v-if="vipInfo?.status === 'ok'">
+          <img src="../../assets/novip.jpg" v-else class="user-info-avatar">
           <div class="user-info-name">
             {{userInfo?.name}}
             <div v-if="vipInfo?.status === 'ok' && vipInfo?.expire">
@@ -269,7 +269,7 @@ import { useRoute, useRouter } from 'vue-router'
     box-sizing: border-box;
   }
   .sider-bottom.vip {
-    background: rgba(132, 133, 141, 0.2)
+    background: rgba(255, 255, 255, 0)
   }
   .sider-bottom::before {
     display: block;
