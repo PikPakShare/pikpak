@@ -244,7 +244,7 @@ onUnmounted(() => {
 
 <style >
   .login-page {
-    background-color: #ff7440;
+    background-color: #ff8255;
      box-sizing: border-box;
     min-height: 100vh;
     width: 100%;
