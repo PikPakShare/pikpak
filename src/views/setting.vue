@@ -149,11 +149,14 @@
       </n-collapse-item>
       <!-- end 代理设置 -->
 
-      <n-collapse-item title="关于丨" name="6">
+      <n-collapse-item title="关于" name="6">
         <n-space>
+          <a href="https://t.me/PikPakGroup" target="_blank" class="n-button">PikPak 分享群</a>
+          <a href="https://t.me/PikPakShare" target="_blank" class="n-button">PikPak 分享频道</a>
+          <a href="https://t.me/PikPakChannel" target="_blank" class="n-button">PikPak 通知频道</a>
           <a href="https://mypikpak.com/" target="_blank" class="n-button">官方网站</a>
           <a href="https://t.me/pikpak_userservice" target="_blank" class="n-button">官方交流群</a>
-          <a href="https://github.com/xiaokaixuan/pikpak" target="_blank" class="n-button">开源仓库</a>
+          <a href="https://github.com/northsea4/pikpak" target="_blank" class="n-button">开源仓库</a>
         </n-space>
         <br />
       </n-collapse-item>
