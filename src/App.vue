@@ -25,7 +25,7 @@
     },
     Upload: {
       itemColorHover: '#fafafaff',
-      itemTextColorSuccess: '#18a058ff',
+      itemTextColorSuccess: '#ffc1aaff',
     }
   })
   onMounted(() => {
