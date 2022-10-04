@@ -402,12 +402,6 @@
             }, {
               default: () => '下载'
             }),
-            !samllPage.value && row.kind === 'drive#file' && h(NText, {
-              type: 'primary',
-              onClick: () => aria2Buff(row.id)
-            }, {
-              default: () => 'Aria2-Buff'
-            }),
             !samllPage.value && h(NText, {
               type: 'primary',
               onClick: () => {
@@ -455,12 +449,6 @@
                     break
                   case 'aria2Post':
                     getFile(row.id)
-                      .then((res:any) => {
-                        aria2Post(res)
-                      })
-                    break
-                  case 'aria2PostBuff':
-                    getFileMultiTimes(row.id, aria2Data.value.batchUrlNum)
                       .then((res:any) => {
                         aria2Post(res)
                       })
@@ -624,6 +612,8 @@
       if(aria2.dir === undefined) {
         aria2.dir = true
       }
+      // 叠加策略：
+      aria2.batchStrategy = 'series'
       if(aria2.host) {
         aria2Data.value = aria2
       }
@@ -906,13 +896,6 @@
       postOne()
     }
   
-    const aria2Buff = (id:string) => {
-      getFileMultiTimes(id, aria2Data.value.batchUrlNum)
-        .then((res:any) => {
-          aria2Post(res, '', true)
-        })
-    }
-  
     const downFile = (id:string) => {
       getFile(id)
         .then((info:any) => {
@@ -973,7 +956,7 @@
           aria2Dir.value = res?.result?.dir || ''
         })
     }
-    const aria2Post = (res:any, dir?:string, isBuff:boolean = false) => {
+    const aria2Post = (res:any, dir?:string) => {
       let urls:Array<string> = []
       let filename: string
   
@@ -986,10 +969,16 @@
         urls.push(res.data.web_content_link)
         filename = res.data.name
       }
-  
+
+      const isBuff = aria2Data.value.batchUrlNum > 1
+
       if (!isBuff) {
+        // -999(或小于-1) 表示不进行`服务器序号替换`处理
         urls = urls.map(url => refineAria2DownloadUrl(aria2Data.value, url, -999))
       } else {
+        if (urls.length === 1) {
+        urls = new Array(aria2Data.value.batchUrlNum).fill(urls[0])
+      }
         urls = urls.map((url, k) => refineAria2DownloadUrl(aria2Data.value, url, k - 1))
       }
   
@@ -1243,11 +1232,6 @@
         {
           label: '推送到Aria2',
           key: 'aria2Post',
-          disabled: row.size <= 0 || !aria2Data.value || !aria2Data.value.host
-        },
-        {
-          label: '推送到Aria2-BUFF',
-          key: 'aria2PostBuff',
           disabled: row.size <= 0 || !aria2Data.value || !aria2Data.value.host
         },
         {
