@@ -21,7 +21,7 @@
           <n-form-item label="Aria2 Token：">
             <n-input v-model:value="aria2Data.token" type="password" show-password-on="mousedown" clearable></n-input>
           </n-form-item>
-          <n-form-item label="限制连接数：" feedback="限制连接数 - 一个下载链接只使用一个网络连接(线程)，使用反代时，建议开启，避免下载 Error 429。如不开启，请查看 Aria2 默认的单任务连接数和单服务器最大连接数「实测并没有降低 429 的概率😅」">
+          <n-form-item label="限制连接数：" feedback="限制连接数 - 一个下载链接只使用一个网络连接/线程">
             <n-switch v-model:value="aria2Data.restrictConnections">
               <template #checked>开启 - 避免请求频繁</template>
               <template #unchecked>不开启 - Aria2 默认控制</template>
