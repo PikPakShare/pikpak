@@ -28,31 +28,19 @@
             </n-switch>
           </n-form-item>
           <!-- TODO nativeui v2.24.0 才有feedback这个slot -->
-          <n-form-item label="反代域名：" feedback="反代域名 - 对全部 Aria2 下载生效">
+          <n-form-item label="反代域名：" feedback="反代域名 - 对 Aria2 下载生效">
             <n-input v-model:value="aria2Data.reverseHost" placeholder="例如 http://pcdn.xx.com" clearable></n-input>
-          </n-form-item>
-          <n-form-item label="服务器序号：" feedback="服务器序号 - 仅对「推送到Aria2」生效">
-            <n-auto-complete
-              v-model:value="aria2Data.serverNumber"
-              :options="aria2Data.serverNumbers"
-              placeholder="下载服务器序号"
-              clearable
-            ></n-auto-complete>
           </n-form-item>
           <n-form-item label="服务器列表：">
             <n-dynamic-tags v-model:value="aria2Data.serverNumbers" />
           </n-form-item>
-          <n-form-item label="叠加数量：" feedback="叠加数量 - 对应功能「Aria2-Buff」，使用多个链接下载一个文件，适合需要更快下载某个文件的场景">
+          <n-form-item label="叠加数量：" feedback="叠加数量 - 对应功能「推送到Aria2」，使用多个链接下载一个文件">
             <n-input-number v-model:value="aria2Data.batchUrlNum" placeholder="需要推送多少个链接下载一个文件" :min="0" :max="64"></n-input-number>
           </n-form-item>
-          <n-form-item label="叠加策略：" feedback="叠加策略 - 「自然选择」：取到什么就用什么；「序列循坏」：从「服务器序号列表」中从头到尾选取">
+          <n-form-item label="叠加策略：" feedback="叠加策略 -「序列循坏」：从「服务器序号列表」中从头到尾选取">
             <n-radio-group v-model:value="aria2Data.batchStrategy">
-              <n-radio-button value="natural" label="自然选择">自然选择</n-radio-button>
               <n-radio-button value="series" label="序列循坏">序列循坏</n-radio-button>
             </n-radio-group>
-          </n-form-item>
-          <n-form-item label="获取链接并发：" feedback="获取链接并发 - 提取多个下载链接时的并发数，建议不要太大，以免触发风控">
-            <n-input-number v-model:value="aria2Data.batchUrlConcurrence" placeholder="提取多个下载链接时的并发数"></n-input-number>
           </n-form-item>
           <n-form-item label="文件夹设置：">
             <n-switch v-model:value="aria2Data.dir" >
@@ -213,16 +201,12 @@ const aria2Data = ref({
   host: 'http://localhost:6800/jsonrpc',
   token: '',
   dir: true,
-  restrictConnections: true,
-  // 自定义服务器序号
-  serverNumber: '',
+  restrictConnections: false,
   // 使用多少个链接下载同一个文件
-  batchUrlNum: 1,
-  // TODO 获取下载链接并发（目前没实现真的并发）
-  batchUrlConcurrence: 4,
+  batchUrlNum: 5,
   serverNumbers: serverNumbers,
   // 叠加策略
-  batchStrategy: 'natural',
+  batchStrategy: 'series',
   // 反代域名
   reverseHost: '',
 })
