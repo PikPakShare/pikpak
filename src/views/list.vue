@@ -22,19 +22,19 @@
           <n-space>
             <n-popover v-if="moveFiles?.length" trigger="hover">
               <template #trigger>
-                <n-button type="default" @click="movePost">
+                <n-button type="primary" @click="movePost">
                   粘贴已剪切{{moveFiles.length}}项资源
                 </n-button>
               </template>
-              <n-button type="warning" @click="movePost('cancel')">取消剪切</n-button>
+              <n-button type="info" @click="movePost('cancel')">取消剪切</n-button>
             </n-popover>
             <n-popover v-if="copyFiles?.length" trigger="hover">
               <template #trigger>
-                <n-button @click="copyPost">
+                <n-button type="primary" @click="copyPost">
                   粘贴已复制{{copyFiles.length}}项资源
                 </n-button>   
               </template>
-              <n-button type="warning" @click="copyPost('cancel')">取消复制</n-button>
+              <n-button type="info" @click="copyPost('cancel')">取消复制</n-button>
             </n-popover>     
             <n-button type="primary" @click="showAddUrl = true">
               <template #icon>
@@ -42,7 +42,7 @@
               </template>
               磁力/秒链/目录
             </n-button>
-            <n-button @click="showUserMenu = true">
+            <n-button type="primary" @click="showUserMenu = true">
               自定义菜单
             </n-button>
           </n-space>
