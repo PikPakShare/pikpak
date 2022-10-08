@@ -1247,7 +1247,7 @@
         //   disabled: !row.hash
         // },
         {
-          label: '♻️ 删除 ♻️',
+          label: '❌ 删除 ❌',
           key: 'delete'
         },
         // {
