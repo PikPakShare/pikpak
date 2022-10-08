@@ -1,1 +1,0 @@
-import{d as n,m as a,l as c,b as p,s as u}from"./vendor.23f255bf.js";const _=n({setup(f){const t=a(),o=c(),{params:s,query:r}=t,{path:e}=s;return o.replace({path:"/"+(typeof e=="string"?e:e.join("/")),query:r}),(m,i)=>(p(),u("div"))}});export{_ as default};
