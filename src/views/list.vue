@@ -26,7 +26,7 @@
                   📝 粘贴已剪切{{moveFiles.length}}项资源 📝
                 </n-button>
               </template>
-              <n-button type="info" @click="movePost('cancel')">🚫 取消剪切 🚫</n-button>
+              <n-button type="primary" @click="movePost('cancel')">🚫 取消剪切 🚫</n-button>
             </n-popover>
             <n-popover v-if="copyFiles?.length" trigger="hover">
               <template #trigger>
@@ -34,10 +34,10 @@
                   📋 粘贴已复制{{copyFiles.length}}项资源 📝
                 </n-button>
               </template>
-              <n-button type="info" @click="copyPost('cancel')">🚫 取消复制 🚫</n-button>
+              <n-button type="primary" @click="copyPost('cancel')">🚫 取消复制 🚫</n-button>
             </n-popover>
             <n-button type="primary" @click="showAddUrl = true">
-              🆕 磁力/秒链/目录 🆕
+              ➕ 磁力/秒链/目录 ➕
             </n-button>
             <n-button type="default" @click="showUserMenu = true">
               ⚙️ 自定义菜单 ⚙️
@@ -266,7 +266,7 @@
     NFormItem, NTag, NText, NInputGroup, NPopover,
   } from 'naive-ui'
   import { 
-    CirclePlus, CircleX, Dots, Share, Copy as IconCopy, SwitchHorizontal, LetterA, 
+    CircleX, Dots, TextWrapDisabled, Copy as IconCopy, Cut, CloudDownload, 
     ZoomQuestion, Trash 
   } from '@vicons/tabler'
   import { 
