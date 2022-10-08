@@ -22,28 +22,25 @@
           <n-space>
             <n-popover v-if="moveFiles?.length" trigger="hover">
               <template #trigger>
-                <n-button type="primary" @click="movePost">
-                  粘贴已剪切{{moveFiles.length}}项资源
+                <n-button type="default" @click="movePost">
+                  📝 粘贴已剪切{{moveFiles.length}}项资源 📝
                 </n-button>
               </template>
-              <n-button type="info" @click="movePost('cancel')">取消剪切</n-button>
+              <n-button type="info" @click="movePost('cancel')">🚫 取消剪切 🚫</n-button>
             </n-popover>
             <n-popover v-if="copyFiles?.length" trigger="hover">
               <template #trigger>
-                <n-button type="primary" @click="copyPost">
-                  粘贴已复制{{copyFiles.length}}项资源
-                </n-button>   
+                <n-button type="default" @click="copyPost">
+                  📋 粘贴已复制{{copyFiles.length}}项资源 📝
+                </n-button>
               </template>
-              <n-button type="info" @click="copyPost('cancel')">取消复制</n-button>
-            </n-popover>     
+              <n-button type="info" @click="copyPost('cancel')">🚫 取消复制 🚫</n-button>
+            </n-popover>
             <n-button type="primary" @click="showAddUrl = true">
-              <template #icon>
-                <n-icon><circle-plus/></n-icon>
-              </template>
-              磁力/秒链/目录
+              🆕 磁力/秒链/目录 🆕
             </n-button>
-            <n-button type="primary" @click="showUserMenu = true">
-              自定义菜单
+            <n-button type="default" @click="showUserMenu = true">
+              ⚙️ 自定义菜单 ⚙️
             </n-button>
           </n-space>
         </div>
@@ -71,7 +68,7 @@
             <n-tooltip>
               <template #trigger>
                 <n-icon>
-                  <switch-horizontal></switch-horizontal>
+                  <cut></cut>
                 </n-icon>
               </template>
               剪切所选
@@ -81,17 +78,17 @@
             <n-tooltip>
               <template #trigger>
                 <n-icon>
-                  <letter-a></letter-a>
+                  <cloud-download></cloud-download>
                 </n-icon>
               </template>
-              推送到Aria2
+              推送到 Aria2
             </n-tooltip>
           </div>
           <div class="toolbar-item" @click="copyAll">
             <n-tooltip>
               <template #trigger>
                 <n-icon>
-                  <share></share>
+                  <text-wrap-disabled></text-wrap-disabled>
                 </n-icon>
               </template>
               分享秒传
@@ -1208,56 +1205,56 @@
     const getFileActions = (row:any) => {
       const options:DropdownMixedOption[] = [
         {
-          label: '重命名',
+          label: '📝 重命名 📝',
           key: 'name',
         },
         {
-          label: '复制',
+          label: '📋 复制 📋',
           key: 'batchCopy',
         },
         {
-          label: '剪切',
+          label: '✂️ 剪切 ✂️',
           key: 'batchMove',
         },
         {
-          label: '直接下载',
+          label: '⏬ 直接下载 ⏬',
           key: 'down',
           disabled: row.size <= 0
         },
         {
-          label: '复制下载链接',
+          label: '🔗 复制下载链接 🔗',
           key: 'copyDown',
           disabled: row.size <= 0
         },
         {
-          label: '推送到Aria2',
+          label: '📤 推送到 Aria2 📤',
           key: 'aria2Post',
           disabled: row.size <= 0 || !aria2Data.value || !aria2Data.value.host
         },
         {
-          label: '复制秒传',
+          label: '📋 复制秒传链接 📋',
           key: 'code',
           disabled: !row.hash
         },
-        {
-          label: '设为默认目录',
-          key: 'base',
-          disabled: row.kind !== 'drive#folder'
-        },
+        // {
+        //   label: '设为默认目录',
+        //   key: 'base',
+        //   disabled: row.kind !== 'drive#folder'
+        // },
         // {
         //   label: '分享到资源库',
         //   key: 'share',
         //   disabled: !row.hash
         // },
         {
-          label: '删除',
+          label: '♻️ 删除 ♻️',
           key: 'delete'
         },
-        {
-          label: '直接分享',
-          key: 'sharePikPak',
-          disabled: row.kind === 'drive#folder'
-        },
+        // {
+        //   label: '🔗 直接分享 🔗',
+        //   key: 'sharePikPak',
+        //   disabled: row.kind === 'drive#folder'
+        // },
       ]
       if(row.kind !== 'drive#folder') {
         if(userMenu.value.length) {
