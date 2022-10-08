@@ -2,9 +2,7 @@
   <div class="list-page">
     <n-collapse :default-expanded-names="['6']">
       <n-collapse-item name="0" >
-        <template #header>
-          绑定 Telegram丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><BrandTelegram></BrandTelegram></n-icon> </a>
-        </template>
+        <template #header>绑定 Telegram丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><BrandTelegram></BrandTelegram></n-icon></template>
         <n-input v-model:value="telegramUrl" placeholder="填入 Telegram 绑定链接"></n-input>
         <p></p>
         <n-button :disabled="!telegramUrl" type="primary" @click="goTelegram">绑定</n-button>&nbsp; 
@@ -13,7 +11,7 @@
 
       <!-- start Aria2设置 -->
       <n-collapse-item name="1" title="Aria2 设置丨">
-        <template #header>Aria2 设置丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><Puzzle></Puzzle></n-icon> </a></template>
+        <template #header>Aria2 设置丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><Puzzle></Puzzle></n-icon></template>
         <n-form label-width="120px" label-align="left" label-placement="left" autocomplete="off">
           <n-form-item label="Aria2 RPC：">
             <n-input v-model:value="aria2Data.host" placeholder="例如 http://localhost:6800/jsonrpc" clearable></n-input>
