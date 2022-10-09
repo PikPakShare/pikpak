@@ -23,7 +23,7 @@
             <n-popover v-if="moveFiles?.length" trigger="hover">
               <template #trigger>
                 <n-button type="default" @click="movePost">
-                  📝 粘贴已剪切{{moveFiles.length}}项资源 📝
+                  📋 粘贴已剪切{{moveFiles.length}}项资源 📋
                 </n-button>
               </template>
               <n-button type="primary" @click="movePost('cancel')">🚫 取消剪切 🚫</n-button>
@@ -31,7 +31,7 @@
             <n-popover v-if="copyFiles?.length" trigger="hover">
               <template #trigger>
                 <n-button type="default" @click="copyPost">
-                  📋 粘贴已复制{{copyFiles.length}}项资源 📝
+                  📋 粘贴已复制{{copyFiles.length}}项资源 📋
                 </n-button>
               </template>
               <n-button type="primary" @click="copyPost('cancel')">🚫 取消复制 🚫</n-button>
