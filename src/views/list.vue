@@ -109,7 +109,7 @@
       <n-modal v-model:show="showAddUrl">
         <n-card style="width: 600px;" title="添加链接或新建文件夹">
           <template #header-extra>
-            <n-icon @click="showAddUrl = false">
+            <n-icon size="24" @click="showAddUrl = false">
               <circle-x></circle-x>
             </n-icon>
           </template>
@@ -157,7 +157,7 @@
       <n-modal v-model:show="showName">
         <n-card style="width: 600px;" title="修改名称">
           <template #header-extra>
-            <n-icon @click="showName = false">
+            <n-icon size="24" @click="showName = false">
               <circle-x></circle-x>
             </n-icon>
           </template>
