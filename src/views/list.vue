@@ -130,7 +130,7 @@
       <n-modal v-model:show="showVideo">
         <n-card style="width: 100vw; height: 100vh;" :title="fileInfo ? fileInfo.name : '视频'">
           <template #header-extra>
-            <n-icon @click="showVideo = false">
+            <n-icon size="24" @click="showVideo = false">
               <circle-x></circle-x>
             </n-icon>
           </template>
@@ -144,7 +144,7 @@
       <n-modal v-model:show="showImage">
         <n-card style="width: 100vw; height: 100vh;" :title="fileInfo ? fileInfo.name : '图片'">
           <template #header-extra>
-            <n-icon @click="showImage = false">
+            <n-icon size="24" @click="showImage = false">
               <circle-x></circle-x>
             </n-icon>
           </template>
@@ -175,7 +175,7 @@
             自定义菜单 <a href="https://telegra.ph/PikPak-Tutorial-Series-08-29" target="_blank"> <n-icon style="vertical-align: middle;" size="20" color="#ff4500"><zoom-question></zoom-question></n-icon> </a>
           </template>
           <template #header-extra>
-            <n-icon @click="showUserMenu = false">
+            <n-icon size="24" @click="showUserMenu = false">
               <circle-x></circle-x>
             </n-icon>
           </template>
@@ -213,7 +213,7 @@
       <n-modal v-model:show="showCopy">
         <n-card style="width: 600px;" title="复制链接">
           <template #header-extra>
-            <n-icon @click="showCopy = false">
+            <n-icon size="24" @click="showCopy = false">
               <circle-x></circle-x>
             </n-icon>
           </template>
@@ -239,7 +239,7 @@
       <n-modal v-model:show="showCopyFail">
         <n-card style="width: 600px;" title="复制失败，自己选择复制">
           <template #header-extra>
-            <n-icon @click="showCopyFail = false">
+            <n-icon size="24" @click="showCopyFail = false">
               <circle-x></circle-x>
             </n-icon>
           </template>
