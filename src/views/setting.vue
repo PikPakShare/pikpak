@@ -102,9 +102,9 @@
       </n-collapse-item>
       <!-- end 播放设置 -->
 
-      <!-- start 自动登录设置 -->
-      <n-collapse-item name="4" title="自动登录设置丨">
-        <template #header>自动登录设置丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><Accessible></Accessible></n-icon></template>
+      <!-- start 自动登录 -->
+      <n-collapse-item name="4" title="自动登录丨">
+        <template #header>自动登录丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><Accessible></Accessible></n-icon></template>
         <n-form label-width="100px" label-align="left" label-placement="left">
           <n-form-item label="是否开启">
             <n-switch v-model:value="loginSwitch"></n-switch>
@@ -122,7 +122,7 @@
           </n-form-item>
         </n-form>
       </n-collapse-item>
-      <!-- end 自动登录设置 -->
+      <!-- end 自动登录 -->
 
       <!-- start 代理设置 -->
       <n-collapse-item name="5">
