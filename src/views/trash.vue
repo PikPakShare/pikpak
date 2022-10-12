@@ -31,7 +31,7 @@
             <n-tooltip>
               <template #trigger>
                 <n-icon>
-                  <circle-x></circle-x>
+                  <trash></trash>
                 </n-icon>
               </template>
               删除所选
@@ -48,7 +48,7 @@
   import http from '../utils/axios'
   import { DataTableColumns, NDataTable, NTime, NEllipsis, NBreadcrumb, NBreadcrumbItem, NSpace, NText, NPopconfirm, NIcon, NTooltip, NScrollbar, NSpin } from 'naive-ui'
   import { byteConvert } from '../utils'
-  import { CircleX, CornerUpLeftDouble } from '@vicons/tabler'
+  import { Trash, CornerUpLeftDouble } from '@vicons/tabler'
   
     const filesList = ref()
     const checkedRowKeys = ref([])
