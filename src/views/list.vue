@@ -128,7 +128,7 @@
         </n-card>
       </n-modal>
       <n-modal v-model:show="showVideo">
-        <n-card style="width: 80vw;" :title="fileInfo ? fileInfo.name : '视频'">
+        <n-card style="width: 80vw; height: 80vh;" :title="fileInfo ? fileInfo.name : '视频'">
           <template #header-extra>
             <n-icon size="24" @click="showVideo = false">
               <circle-x></circle-x>
@@ -142,7 +142,7 @@
       </n-modal>
       
       <n-modal v-model:show="showImage">
-        <n-card style="width: 80vw;" :title="fileInfo ? fileInfo.name : '图片'">
+        <n-card style="width: 80vw; height: 80vh;" :title="fileInfo ? fileInfo.name : '图片'">
           <template #header-extra>
             <n-icon size="24" @click="showImage = false">
               <circle-x></circle-x>
