@@ -1,20 +1,8 @@
 <template>
   <video ref="playerRef" v-if="isVideo"></video>
   <audio ref="playerRef" v-if="isAudio"></audio>
-  <!--<video ref="playerRef" :data-poster="videoInfo.thumbnail_link" v-if="videoInfo.mime_type.indexOf('video') !== -1">
-    <template v-for="(item, key) in videoInfo.medias" :key="key">
-      <source 
-        :src="item?.link.url"
-        :type="videoInfo.mime_type === 'video/x-matroska' ? 'video/webm' :videoInfo.mime_type"
-        :size="list[item.resolution_name]"
-      />
-    </template>
-  </video>
-  <audio ref="playerRef" v-else-if="videoInfo.mime_type.indexOf('audio') !== -1">
-    <source :src="videoInfo.web_content_link"  />
-  </audio>
-  -->
 </template>
+
 <script setup lang="ts">
 import { computed, ref } from '@vue/reactivity';
 import { onMounted } from '@vue/runtime-core';
@@ -63,13 +51,16 @@ import 'plyr/dist/plyr.css'
       sources: []
     }
 
-    if (isVideo) {
+    if (isVideo.value) {
       source.type = 'video'
       let originalSize = 0
       let original = ''
       const sizeCounter: any = {}
 
       videoInfo.value.medias.forEach((v: any) => {
+        if (!v.video) {
+          return
+        }
         let size: number = list[v.resolution_name] || v.video.height
         if (v.media_name === 'Original') {
           originalSize = size
@@ -97,14 +88,17 @@ import 'plyr/dist/plyr.css'
         if (v.media_name === 'Original') {
           size = originalSize
         }
-        source.sources.push({
+        const _source: any = {
           src: v?.link.url,
           type: videoInfo.value.mime_type === 'video/x-matroska' ? 'video/webm' : videoInfo.value.mime_type,
-          size: size,
-        })
-        quality.options.push(size)
+        }
+        if (size) {
+          _source.size = size
+          quality.options.push(size)
+        }
+        source.sources.push(_source)
       })
-    } else if (isAudio) {
+    } else if (isAudio.value) {
       source.type = 'audio'
       source.sources.push({
         src: videoInfo.value.web_content_link,
@@ -125,20 +119,6 @@ import 'plyr/dist/plyr.css'
     player.value.on('error', async (event: any) => {
       const instance = event.detail.plyr
       console.warn('error', event)
-
-      // [不可行] 暂时想到的，就是发生错误时，给src设置一个动态参数（当前毫秒时间戳），然后尝试播放（instance.play()）。
-      // 
-      // for (let i = 0; i < instance.media.children.length; i++) {
-      //   const s = instance.media.children[i]
-      //   if (s.src === instance.media.src) {
-      //     const t = Date.now().toString()
-      //     const pattern = /(&__t=\d+)?$/
-      //     const replacement = '&__t=' + t
-      //     instance.media.src = instance.media.src.replace(pattern, replacement)
-      //     s.src = s.src.replace(pattern, replacement)
-      //     break
-      //   }
-      // }
     })
 
     player.value.poster = videoInfo.value.thumbnail_link
