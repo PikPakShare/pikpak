@@ -25,21 +25,25 @@
               <template #unchecked>不开启 - Aria2 默认控制</template>
             </n-switch>
           </n-form-item>
-          <!-- TODO nativeui v2.24.0 才有feedback这个slot -->
+          <br>
           <n-form-item label="反代域名：" feedback="反代域名 - 对 Aria2 下载生效">
             <n-input v-model:value="aria2Data.reverseHost" placeholder="例如 http://pcdn.xx.com" clearable></n-input>
           </n-form-item>
+          <br>
           <n-form-item label="服务器列表：">
             <n-dynamic-tags v-model:value="aria2Data.serverNumbers" />
           </n-form-item>
+          <br>
           <n-form-item label="叠加数量：" feedback="叠加数量 - 对应功能「推送到Aria2」，使用多个链接下载一个文件">
             <n-input-number v-model:value="aria2Data.batchUrlNum" placeholder="需要推送多少个链接下载一个文件" :min="0" :max="64"></n-input-number>
           </n-form-item>
+          <br>
           <n-form-item label="叠加策略：" feedback="叠加策略 -「序列循坏」：从「服务器序号列表」中从头到尾选取">
             <n-radio-group v-model:value="aria2Data.batchStrategy">
               <n-radio-button value="series" label="序列循坏">序列循坏</n-radio-button>
             </n-radio-group>
           </n-form-item>
+          <br>
           <n-form-item label="文件夹设置：">
             <n-switch v-model:value="aria2Data.dir" >
               <template #checked>推送下载文件夹时保存文件夹结构</template>
@@ -68,9 +72,11 @@
               clearable
             ></n-auto-complete>
           </n-form-item>
+          <br>
           <n-form-item label="反代域名：" feedback="反代域名 - 自动在下载链接前加上该反代域名">
             <n-input v-model:value="downloadConfig.reverseHost" placeholder="反代域名" clearable></n-input>
           </n-form-item>
+          <br>
           <n-form-item>
             <n-button type="primary" @click="saveDownloadConfig">保存</n-button>
           </n-form-item>
@@ -90,12 +96,15 @@
               clearable
             ></n-auto-complete>
           </n-form-item>
+          <br>
           <n-form-item label="反代域名：" feedback="反代域名 - 自动在播放链接前加上该反代域名">
             <n-input v-model:value="playConfig.reverseHost" placeholder="反代域名" clearable></n-input>
           </n-form-item>
+          <br>
           <n-form-item label="应用到图片查看：" feedback="应用到图片查看 - 查看图片时也使用指定序号和反代域名">
             <n-switch v-model:value="playConfig.applyToImage"></n-switch>
           </n-form-item>
+          <br>
           <n-form-item>
             <n-button type="primary" @click="savePlayConfig">保存</n-button>
           </n-form-item>
