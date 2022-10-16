@@ -47,8 +47,7 @@
             </n-switch>
           </n-form-item>
           <n-form-item>
-            <n-button type="primary" @click="testAria2">测试并保存</n-button>
-            <br>
+            <n-button type="primary" @click="testAria2">测试并保存</n-button>&nbsp;&nbsp;&nbsp;&nbsp;
             <br>
             <n-alert type="warning" title="由于浏览器限制，请在浏览器地址栏最前面的「🔒」按钮「网站设置」选项中，将「不安全内容」设置为「允许」">
             </n-alert>
