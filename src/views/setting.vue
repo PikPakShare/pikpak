@@ -5,7 +5,7 @@
         <template #header>绑定 Telegram丨<n-icon style="vertical-align: middle;" size="20" color="#ff4500"><BrandTelegram></BrandTelegram></n-icon></template>
         <n-input v-model:value="telegramUrl" placeholder="填入 Telegram 绑定链接"></n-input>
         <p></p>
-        <n-button :disabled="!telegramUrl" type="primary" @click="goTelegram">绑定</n-button>&nbsp; 
+        <n-button :disabled="!telegramUrl" type="primary" @click="goTelegram">绑定</n-button>&nbsp;&nbsp;&nbsp;&nbsp;
         <a href="https://t.me/PikPak_Bot" target="_blank">Telegram 机器人地址</a>
       </n-collapse-item>
 
@@ -46,10 +46,12 @@
               <template #unchecked>推送下载文件夹时仅保存文件</template>
             </n-switch>
           </n-form-item>
-          <n-alert type="warning" title="由于浏览器限制，请在浏览器地址栏最前面的「🔒」按钮「网站设置」选项中，将「不安全内容」设置为「允许」" v-if="browserTipsVisible">
-          </n-alert>
           <n-form-item>
             <n-button type="primary" @click="testAria2">测试并保存</n-button>
+            <br>
+            <br>
+            <n-alert type="warning" title="由于浏览器限制，请在浏览器地址栏最前面的「🔒」按钮「网站设置」选项中，将「不安全内容」设置为「允许」" v-if="browserTipsVisible">
+            </n-alert>
           </n-form-item>
         </n-form>
       </n-collapse-item>
