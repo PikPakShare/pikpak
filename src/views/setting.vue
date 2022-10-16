@@ -50,7 +50,7 @@
             <n-button type="primary" @click="testAria2">测试并保存</n-button>
             <br>
             <br>
-            <n-alert type="warning" title="由于浏览器限制，请在浏览器地址栏最前面的「🔒」按钮「网站设置」选项中，将「不安全内容」设置为「允许」" v-if="browserTipsVisible">
+            <n-alert type="warning" title="由于浏览器限制，请在浏览器地址栏最前面的「🔒」按钮「网站设置」选项中，将「不安全内容」设置为「允许」">
             </n-alert>
           </n-form-item>
         </n-form>
