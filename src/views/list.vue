@@ -1388,7 +1388,7 @@
     margin-right: 10px;
   }
   .list-page-files {
-    padding-bottom: 80px;
+    padding-bottom: 0px;
   }
   .list-page-files .n-data-table-td .n-space .n-text{
     font-size: 12px;
