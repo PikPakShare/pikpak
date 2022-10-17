@@ -135,7 +135,7 @@ import 'plyr/dist/plyr.css'
   height: 100%;
 }
 .plyr--audio {
-  margin-top: 320px;
+  padding: 30vh 10vh;
 }
 .plyr video {
   object-fit: contain;
