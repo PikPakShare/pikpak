@@ -148,7 +148,7 @@
               <circle-x></circle-x>
             </n-icon>
           </template>
-          <div style="width: 100%; height: calc(100vh - 80px);text-align: center;">
+          <div style="width: 100%; height: 65vh; text-align: center;">
             <img :src="fileInfo?.web_content_link" style="max-width: 100%; max-height: 100%">
           </div>
         </n-card>
