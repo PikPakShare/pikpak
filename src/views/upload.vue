@@ -16,6 +16,7 @@
               <n-text type="warning" style="margin: 8px 0 0 0;">
                 请不要上传敏感数据，记得解决浏览器跨域问题
               <br />
+              <br />
                 支持链接拼上文件夹 ID 传到指定文件夹 (/upload/文件夹 ID)，文件夹 ID 为地址栏大写字母 V 开头，o1 结尾的 26 位字符串，如 V***********************o1
               <br />
                 需要上传到哪个文件夹，便将该文件夹的 ID 拼接到网址后面打开，然后添加文件上传，如 https://pikpakshare.github.io/pikpak/#/upload/V***********************o1
