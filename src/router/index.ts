@@ -52,9 +52,9 @@ const routes: RouteRecordRaw[] = [
     ]
   },
   {
-    path: '/t/:id?',
-    name: 'test',
-    component: () => import('../views/test.vue')
+    path: '/upload/:id?',
+    name: 'upload',
+    component: () => import('../views/upload.vue')
   },
   {
     path: '/s/:id/:password?',
