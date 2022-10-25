@@ -10,6 +10,8 @@
                 </n-icon>
               </div>
               <n-text style="font-size: 24px;">点击或者拖动文件到该区域来上传</n-text>
+              <br />
+              <br />
               <n-text type="warning" style="margin: 8px 0 0 0;">
                 请不要上传敏感数据，记得解决浏览器跨域问题，支持链接拼上 ID 传到指定文件夹 (/t/******)
               </n-text>
