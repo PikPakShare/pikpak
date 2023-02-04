@@ -1205,49 +1205,39 @@
     const getFileActions = (row:any) => {
       const options:DropdownMixedOption[] = [
         {
-          label: '📝 重命名 📝',
+          label: '📝 重命名',
           key: 'name',
         },
         {
-          label: '📋 复制 📋',
+          label: '📋 复制',
           key: 'batchCopy',
         },
         {
-          label: '✂️ 剪切 ✂️',
+          label: '✂️ 剪切',
           key: 'batchMove',
         },
         {
-          label: '⏬ 直接下载 ⏬',
+          label: '⏬ 直接下载',
           key: 'down',
           disabled: row.size <= 0
         },
         {
-          label: '🔗 复制下载链接 🔗',
+          label: '🔗 复制下载链接',
           key: 'copyDown',
           disabled: row.size <= 0
         },
         {
-          label: '📤 推送到 Aria2 📤',
+          label: '📤 推送到 Aria2',
           key: 'aria2Post',
           disabled: row.size <= 0 || !aria2Data.value || !aria2Data.value.host
         },
         {
-          label: '📋 复制秒传链接 📋',
+          label: '📋 复制秒传链接',
           key: 'code',
           disabled: !row.hash
         },
-        // {
-        //   label: '设为默认目录',
-        //   key: 'base',
-        //   disabled: row.kind !== 'drive#folder'
-        // },
-        // {
-        //   label: '分享到资源库',
-        //   key: 'share',
-        //   disabled: !row.hash
-        // },
         {
-          label: '❌ 删除 ❌',
+          label: '❌ 删除',
           key: 'delete'
         },
         // {
