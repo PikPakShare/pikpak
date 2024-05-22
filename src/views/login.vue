@@ -76,13 +76,8 @@ const loginPost = () => {
     "client_secret": "dbw2OtmVEeuUvIptb1Coyg",
     "grant_type": "password",
     ...loginData.value
-    }, {
-    headers: {
-      'User-Agent': 'PikPakShare'
-    }
   })
     .then((res:any) => {
-      loading.value = false
       if(res.data && res.data.access_token) {
         window.localStorage.setItem('pikpakLogin', JSON.stringify(res.data))
         if(remember.value) {
